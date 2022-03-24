@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/79561afa19.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="jquery.datetimepicker.css">
+        <script src="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet"/>
+    
+    <title>Manage Order</title>
+</head>
+<body>
+    <div class="nav">
+        <h1><i class="fas fa-paw"></i> จัดการ ออเดอร์ <i class="fas fa-paw"></i></h1>
+    </div>
+        <div class="manage">
+            <div class="con-manage">
+                <table class="table-manage">
+                    <thead class="thead-manage">
+                        <tr>
+                            <th>ลำดับที่</th>
+                            <th>เลขที่ออเดอร์</th>
+                            <th>ชื่อลูกค้า</th>
+                            <th>รายการ สินค้า</th>
+                            <th>ปริมาณ</th>
+                            <th>จำนวน</th>
+                            <th>คนขับ</th>
+                            <th>ทะเบียน</th>
+                            <th>เรทราคา/กิโลกรัม</th>
+                            <th>วันที่มอบหมาย</th>
+                            <th>เวลา</th>
+                            <th>ยืนยันจัดส่ง</th>
+                            <th>หมายเหตุ</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody class="tbody-manage">
+                        <tr>
+                        <form action="">
+                            <td>1.</td>
+                            <td>OD22</td>
+                            <td>สำโรง</td>
+                            <td>
+                                <ul class="ul-list-order">
+                                    <li>อาหารเม็ดสำหรับกระต่าย </li>
+                                    <li>หญ้าอัลฟาฟ่า  </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>2.35 </li>
+                                    <li>1  </li>
+                                </ul>
+                            </td>
+                            <td> 
+                                <ul>
+                                    <li>2 </li>
+                                    <li>1  </li>
+                                </ul>
+                            </td>
+                            <td class="select-partner">
+                                <input type="text" name="Order_No" value="" hidden>
+                                <select type="text" name="shipping_status" id="shipping_status" class="shipping">
+                                    <option value="id2">นายมะละกอ</option>
+                                    <option value="id3" >นายส้ม</option>
+                                    <option value="id5" >นายส้ม</option>
+                                </select>
+                            </td>
+                            <td class="input-edit">
+                                <input type="text" value="กด-888">
+                            </td>
+                            <td class="input-edit">
+                                <input type="number" value="60">
+                            </td>
+                            <td>
+                                <div class="">
+                                    <input type="date" id="datetosent" name="Date_sent">
+                                </div>
+                                
+                            </td>
+                            <td>
+                                <div class="">
+                                    <input type="time" name="time_toapp" id="" class="time-tosent">
+                                </div>
+                            </td>
+                            <td><button type="submit" class="apove" >บันทึก</button></td>
+                            <td>
+                                <input type="text" name="tag" value="" placeholder="หมายเหตุ">
+                            </td>
+                        </form>
+                        </tr>
+                        <tr>
+                            <td>1.</td>
+                            <td>OD22</td>
+                            <td>สำโรง</td>
+                            <td>
+                                <ul class="ul-list-order">
+                                    <li>อาหารเม็ดสำหรับกระต่าย </li>
+                                    <li>หญ้าอัลฟาฟ่า  </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>2.35 </li>
+                                    <li>1  </li>
+                                </ul>
+                            </td>
+                            <td> 
+                                <ul>
+                                    <li>2 </li>
+                                    <li>1  </li>
+                                </ul>
+                            </td>
+                            <td class="select-partner">
+                                <input type="text" name="Order_No" value="" hidden>
+                                <select type="text" name="shipping_status" id="shipping_status" class="shipping">
+                                    <option value="id2">นายมะละกอ</option>
+                                    <option value="id3" >นายส้ม</option>
+                                    <option value="id5" >นายส้ม</option>
+                                </select>
+                            </td>
+                            <td class="input-edit">
+                                <input type="text" value="กด-888">
+                            </td>
+                            <td class="input-edit">
+                                <input type="number" value="60">
+                            </td>
+                            <td>
+                                <div class="">
+                                    <input type="date" id="datetosent" name="Date_sent">
+                                </div>
+                            </td>
+                            <td>
+                                <input type="time" name="time_toapp" id="" class="time-tosent">
+                            </td>
+                            <td><button type="button" class="apove">บันทึก</button></td>
+                            <td>
+                                <input type="text" name="tag" value="" placeholder="หมายเหตุ">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="/" class="backhome">
+                <i class="fas fa-home"></i>
+            </a>
+        </div>
+
+    </main>
+
+    <script src="/script/script.js"></script>
+
+</body>
+</html>

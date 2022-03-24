@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/79561afa19.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="jquery.datetimepicker.css">
+        <script src="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet"/>
+    
+    <title>Pet Food Shop</title>
+</head>
+<body>
+    <div class="nav">
+        <h1><i class="fas fa-paw"></i> Pet Food Shop  <i class="fas fa-paw"></i></h1>
+    </div>
+    <main class="main">
+        <div class="addorder">
+            <div class="order-list">
+                <div class="order-list-h"><h1>รายการอาหาร</h1></div>
+                <ul class="ul-addorder" id="ul_addorder">
+                    <% if (product) { %>
+                        <% Object.values(product).forEach(function(item){ %>
+                    <li id="liProduct" class="li-product">
+                        <form  id="form_addorder" action="#" class="form-addorder">
+                            <input type="text" name="nameProduct" id="nameProduct" value="<%= item.product_Name %>" readonly >
+                            <div class="item-sec">
+                                <div class="sec-l">
+                                    <div>
+                                        <p>น้ำหนัก </p>
+                                        <input type="number" name="weightProduct" id="weightProduct" value="0" >
+                                        <p>kg.</p>
+                                    </div>
+                                    <div>
+                                        <p>จำนวน</p>
+                                        <input type="number" name="amount_P" id="amountChoose"  value="0" >
+                                        <p>ถุง</p>
+                                    </div>
+                                </div>
+                                <div class="sec-r">
+                                    <button type="button" class="pick" >เพิ่ม</button>
+                               </div>               
+                            </div>
+                        </form>
+                    </li>
+                    <% }) %>
+                    <% } %> 
+                   
+                </ul>
+            </div>
+            <div class="taylor">
+                <div class="gohome">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="swift">
+                    <h2>รายละเอียดออเดอร์</h2>
+                    <form action="/Add-order" class="form_add">
+                        <label>ชื่อลูกค้า</label>
+                        <input type="text" name="cutomer" value="" placeholder="กรอกชื่อลูกค้า">
+                        <ul id="ul_add" class="ul_add">
+                            <li>
+                                <input type="text" value="หญ้าอัลฟาฟ่า">
+                                <span>ขนาด</span>
+                                <input type="number" value="2" name="" id="">
+                                <span>กิโลกรัม</span>
+                                <span>จำนวน</span>
+                                <input type="number" value="1">
+                                <span>ถุง</span>
+                            </li>
+                            <li>
+                                <input type="text" value="หญ้าอัลฟาฟ่า">
+                                <span>ขนาด</span>
+                                <input type="number" value="2" name="" id="">
+                                <span>กิโลกรัม</span>
+                                <span>จำนวน</span>
+                                <input type="number" value="1">
+                                <span>ถุง</span>
+                            </li>
+                        </ul>
+                        <div class="timesetting">
+                            <label for="datetosent">วันที่ต้องการส่ง</label>
+                            <input type="date" id="datetosent" name="Date_sent">
+                        </div>
+                        <div class="timesetting">
+                            <label for="time">เวลา</label>
+                            <input type="text" id="time" placeholder="เลือกเวลา" name="Time_sent" >
+                            <span>น.</span>
+                        </div>
+                        <div class="buttom-choice">
+                            <button type="reset" class="resetchoice" id="resetchoice">ยกเลิก</button>
+                            <button type="submit" class="confirmbuy" >ยืนยันออเดอร์</button>
+                        </div>
+                    </form> 
+                </div>
+            </div>
+        </div>
+       
+        <div class="menu">
+            <div class="menu-list b1" id="ADD_ORDER">
+                <div class="i-con"><i class="fas fa-shopping-cart"></i></div>
+                <div  class="text"><h1>Add Order</h1></div>
+            </div>
+            <a href="/manage-order" class="menu-list b2">
+                <div class="i-con"><i class="fas fa-truck"></i></div>
+                <div  class="text"><h1>Manage Order</h1></div>
+            </a>
+            <a href="/report" class="menu-list b3">
+                <div class="i-con"><i class="fas fa-chart-bar"></i></div>
+                <div class="text"><h1>Report</h1></div>
+            </a>
+        </div>
+      
+
+    </main>
+
+    <script src="/script/script.js"></script>
+    <script>
+        let timepicker = new TimePicker('time', {
+            lang: 'en',
+            theme: 'dark'
+        });
+        timepicker.on('change', function(evt) {
+        let value = (evt.hour || '00') + ':' + (evt.minute || '00');
+        evt.element.value = value;
+        });
+    </script>
+</body>
+</html>
